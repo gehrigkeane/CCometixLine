@@ -1,6 +1,6 @@
 //! Whether a newer ccline is published. Renders only read `update.json`;
 //! when the last check is due they start a detached `ccline update-check`,
-//! which asks the npm registry, then its China mirror, then GitHub releases
+//! which asks the npm registry, then GitHub releases
 //! (through curl, so the binary carries no HTTP stack) and records the
 //! answer.
 
@@ -19,10 +19,6 @@ pub const RELEASES: &str = "https://github.com/Haleclipse/CCometixLine/releases"
 const SOURCES: &[(&str, &str)] = &[
     (
         "https://registry.npmjs.org/@cometix/ccline/latest",
-        "version",
-    ),
-    (
-        "https://registry.npmmirror.com/@cometix/ccline/latest",
         "version",
     ),
     (
